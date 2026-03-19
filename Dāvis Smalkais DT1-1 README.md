@@ -22,7 +22,7 @@ Write-Host "Sistemas drosibas reitings: $s / 100"
 
 4_arhivs.ps1
 
-$f = Get-ChildItem "$env:A251568DS@rvt.lv\Downloads" -Filter "*.pdf" | Where-Object { $_.LastWriteTime -ge (Get-Date).AddHours(-48) }
+$f = Get-ChildItem "$env:C:\Downloads" -Filter "*.pdf" | Where-Object { $_.LastWriteTime -ge (Get-Date).AddHours(-48) }
 Compress-Archive -Path $f.FullName -DestinationPath "C:\Documents\PDF_Backup.zip" -Force
 
 5_programmatura.ps1

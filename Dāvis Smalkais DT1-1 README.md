@@ -31,6 +31,7 @@ $apps = winget list --source msstore 2>&1 | Where-Object { $_ -match '\S' -and $
 $apps | ForEach-Object { Write-Host $_ }
 Write-Host "Sistema ir instaletas $($apps.Count) aplikacijas no Microsoft Store."
 
+
 6_apkope.ps1
 
 $log = "$PSScriptRoot\Servisi.log"; $t = Get-Date -Format "yyyy-MM-dd HH:mm:ss"

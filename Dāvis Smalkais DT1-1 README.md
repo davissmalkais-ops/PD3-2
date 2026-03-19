@@ -28,7 +28,7 @@ Compress-Archive -Path $f.FullName -DestinationPath "A251568DS\Documents\PDF_Bac
 5_programmatura.ps1
 
 $apps = winget list --source msstore 2>&1 | Where-Object { $_ -match '\S' -and $_ -notmatch '^[-\\]|Name|---' }
-$apps | ForEach-Object { Write-Host $_ }
+$apps | ForEach-Object { Write-Host $_ } 
 Write-Host "Sistema ir instaletas $($apps.Count) aplikacijas no Microsoft Store."
 
 

@@ -10,7 +10,7 @@ $w = Get-EventLog -LogName Application -EntryType Warning -After (Get-Date).AddD
 $top3 = $w | Group-Object Source | Sort-Object Count -Descending | Select-Object -First 3
 $out = @("=== Warnings ==="); $w | % { $out += "$($_.TimeGenerated) | $($_.Source) | $($_.Message -replace '\n',' ')" }
 $out += "=== TOP 3 ==="; $top3 | % { $out += "$($_.Name): $($_.Count)" }
-$out | Set-Content "$env:C:\Documents\Warnings.txt" -Encoding UTF8 -Force
+$out | Set-Content "$env:A251568DS\Documents\Warnings.txt" -Encoding UTF8 -Force
 
 3_drosiba.ps1
 
@@ -22,8 +22,8 @@ Write-Host "Sistemas drosibas reitings: $s / 100"
 
 4_arhivs.ps1
 
-$f = Get-ChildItem "$env:C:\Downloads" -Filter "*.pdf" | Where-Object { $_.LastWriteTime -ge (Get-Date).AddHours(-48) }
-Compress-Archive -Path $f.FullName -DestinationPath "C:\Documents\PDF_Backup.zip" -Force
+$f = Get-ChildItem "$env:A251568DS\Downloads" -Filter "*.pdf" | Where-Object { $_.LastWriteTime -ge (Get-Date).AddHours(-48) }
+Compress-Archive -Path $f.FullName -DestinationPath "A251568DS\Documents\PDF_Backup.zip" -Force
 
 5_programmatura.ps1
 
